@@ -1,0 +1,17 @@
+<html>
+<head><title>home</title>
+</head>
+<body bgcolor="black">
+<div class="page-header">
+<button><a href="{% url 'post_new' %}" class="top-menu">add post</a></button>
+<h1 style="color:#ab82ff">list of complaints</h1>
+</div>
+{% for post in posts %}
+    <div>
+    <h2><a href="{% url 'post_open' pk=post.pk %}" style="color:red">{{post.title}}</a></h2>
+    <p style="color:00bfff">{{post.created_date}}</p>
+    <p style="color:white">{{post.text|linebreaksbr}}</p>
+    </div>
+{% endfor %}
+</body>
+</html>

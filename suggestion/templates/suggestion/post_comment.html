@@ -1,0 +1,18 @@
+<html>
+<head><title>home</title></head>
+<body>
+<a href={% url 'post_list' %}>home</a>
+<p>REPLY:</p>
+<p>
+<div>
+    <form method="POST" style="color:black">
+{% csrf_token %}
+{{ f.as_p }}
+<button>post</button>
+</form>
+</div>
+</p>
+
+
+</body>
+</html>

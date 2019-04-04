@@ -1,0 +1,26 @@
+<html>
+<head><title>home</title></head>
+<body>
+<a href={% url 'post_list' %}>home</a>
+<div>
+    <p>post by: <em> {{post.user}}</em></p>
+    <p>adressed to: <em> {{post.recipient}}</em></p>
+    <h2>{{post.title}}</h2>
+    <p>{{post.created_date}}</p>
+    <p>{{post.text|linebreaksbr}}</p>
+    </div>
+<p><button><a href={% url 'post_comment' pk=post.pk %}>add a comment</a></button></p>
+<p>
+<div>
+
+</div>
+</p>
+<p>comments</p>
+{% for r in post.comments.all %}
+<p>{{r.text}}</p>
+{% empty %}
+ <p>no comments</p>
+{% endfor %}
+
+</body>
+</html>

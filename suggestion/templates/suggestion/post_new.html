@@ -1,0 +1,14 @@
+<html>
+<head><title>new post</title></head>
+<body bgcolor="#DADAF5">
+<p>
+<a href={% url 'post_list' %}>home</a>
+</p>
+<h1>new post</h1>
+<form method="POST" style="color:black">
+{% csrf_token %}
+{{ form.as_p }}
+<button>Save</button>
+</form>
+</body>
+</html>
